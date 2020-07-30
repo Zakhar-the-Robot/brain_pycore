@@ -5,8 +5,6 @@ description = ""
 authors = ["Andrei Gramakov <mail@agramakov.me>"]
 
 [tool.poetry.dependencies]
-PIL = "^0.1dev"
-numpy = "^1.19.1"
 smbus2 = "^0.3.0"
 
 [tool.poetry.dev-dependencies]
