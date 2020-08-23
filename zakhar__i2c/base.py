@@ -43,3 +43,14 @@ def send_cmd(addr, cmd, arg=0x0):
     while(i2c_read_byte_from(addr,0x0)):
         sleep(.1)
     sleep(.1)
+
+def i2cdetect(bus_num):
+    b = SMBus(bus_num)
+    devs = []
+    for a in range(0xff):
+        try:
+            b.read_byte(a)
+            devs.append(hex(a))
+        except IOError:
+            pass
+    return devs
