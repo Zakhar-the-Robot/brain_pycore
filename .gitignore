@@ -2,5 +2,3 @@
 **.pyc
 *.egg-info
 .venv
-src/zakhar_mind/scripts/dist
-src/zakhar_mind/scripts/poetry.lock
