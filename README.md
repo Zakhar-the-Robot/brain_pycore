@@ -7,14 +7,20 @@ Base python package for the Zakhar project
 
 ## Installation
 
-Using pip:
-
-``` bash
-python -m pip install git+https://github.com/an-dr/zakhar_pycore
-```
-
-For a specific branch:
+From pypi.org:
 
 ```bash
-python -m pip install git+https://github.com/an-dr/zakhar_pycore@branch_name
+pip install zakhar-pycore
+```
+
+From GitHub:
+
+``` bash
+pip install git+https://github.com/an-dr/zakhar_pycore
+```
+
+From GitHub for a specific branch:
+
+```bash
+pip install git+https://github.com/an-dr/zakhar_pycore@branch_name
 ```
