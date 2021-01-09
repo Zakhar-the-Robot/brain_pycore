@@ -13,7 +13,7 @@
 from smbus2 import SMBus
 from threading import Lock
 
-bus = SMBus(1)  # indicates /dev/ic2-1
+bus = SMBus(1)  # indicates /dev/i2c-1
 i2c_mutex = Lock()
 
 
