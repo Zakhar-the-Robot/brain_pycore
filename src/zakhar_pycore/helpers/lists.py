@@ -11,7 +11,7 @@
 # *************************************************************************
 
 
-def round(in_list, num):
+def get_round(in_list, num):
     new_l = []
     for i in in_list:
         new_l.append(round(i, num))
