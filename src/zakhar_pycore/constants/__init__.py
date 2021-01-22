@@ -13,3 +13,4 @@
 from .addr import ADDR
 from .cmd import CMD
 from .regs import REGS
+from .ros import ROS
