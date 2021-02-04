@@ -33,3 +33,7 @@ class CMD:
         ANGRY = 0x32
         HAPPY = 0x33
         SAD = 0x34
+
+
+class NO_CMD:
+    NO_COMMANDS = -1
