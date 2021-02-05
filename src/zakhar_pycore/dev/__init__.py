@@ -10,7 +10,6 @@
 #
 # *************************************************************************
 
-from . import dev
-from . import ros
-from . import helpers
-from . import i2c
+from . import face_module
+from . import moving_platform
+from . import sensor_platform

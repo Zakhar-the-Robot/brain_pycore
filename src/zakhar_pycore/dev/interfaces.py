@@ -10,7 +10,7 @@
 #
 # *************************************************************************
 
-from . import dev
-from . import ros
-from . import helpers
-from . import i2c
+from .dev_types import Interface
+
+i2c = Interface("i2c")
+none = Interface("none")

@@ -10,7 +10,9 @@
 #
 # *************************************************************************
 
-from . import dev
-from . import ros
-from . import helpers
-from . import i2c
+DEVICECMD = "DeviceCmd_from_ConceptTranslator"
+EMOTION_PARAMS = "EmotionParams"
+I2C = "i2c"
+I2C_EXECUTER = "i2c_executer"
+MAIN_SENSOR_INTERPRETER = "main_sensor_interpreter"
+SENSOR_DATA = "SensorData_for_SensorInterpreter"

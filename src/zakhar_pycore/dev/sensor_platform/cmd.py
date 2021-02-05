@@ -10,9 +10,4 @@
 #
 # *************************************************************************
 
-
-class ADDR:
-    class I2C:
-        MOTORS = 0x2a
-        SENSORS = 0x2b
-        FACE = 0x2c
+NO_COMMANDS = -1

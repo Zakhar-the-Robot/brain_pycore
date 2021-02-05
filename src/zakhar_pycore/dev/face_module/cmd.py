@@ -10,7 +10,8 @@
 #
 # *************************************************************************
 
-from . import dev
-from . import ros
-from . import helpers
-from . import i2c
+CALM = 0x30
+BLINK = 0x31
+ANGRY = 0x32
+HAPPY = 0x33
+SAD = 0x34

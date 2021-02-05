@@ -10,7 +10,8 @@
 #
 # *************************************************************************
 
-from . import dev
-from . import ros
-from . import helpers
-from . import i2c
+CONCEPT_TO_COMMAND = "concept2commands_interpreter"
+EMOTIONCORE_DATADSC = "EmotionCoreDataDescriptor"
+EMOTIONCORE_WRITE = "EmotionCoreWrite"
+I2C = "i2c_server"
+SENSOR_DATA_TO_CONCEPT = "data2concept_interpreter"

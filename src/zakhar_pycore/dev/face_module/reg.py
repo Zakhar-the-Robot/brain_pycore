@@ -10,8 +10,7 @@
 #
 # *************************************************************************
 
-from .addr import ADDR
-from .cmd import CMD
-from .dev import DEV
-from .regs import REGS
-from .ros import ROS
+from ..dev_types import Register
+
+CMD = Register(0x00, "R/W", "Command register. The device is reading commands from here")
+ARG = Register(0x01, "R/W", "Optional argument of the command")
