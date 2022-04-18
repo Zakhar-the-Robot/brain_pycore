@@ -11,4 +11,4 @@
 # *************************************************************************
 
 from . import low_level_i2c
-from .funcs import cmd, write, read
+from .func import cmd, write, read
