@@ -83,5 +83,7 @@
 			},
 		]
 	},
-	"settings": {}
+	"settings": {
+        "python.pythonPath": "python3"
+    }
 }
