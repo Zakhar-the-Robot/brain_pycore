@@ -83,5 +83,10 @@
 			},
 		]
 	},
-	"settings": {}
+	"settings": {
+        "python.analysis.extraPaths": [
+            "${workspaceFolder}/src",
+            "/zakhar/python_packages/brain_pycore/src",
+        ],
+    }
 }

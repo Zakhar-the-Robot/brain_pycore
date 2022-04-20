@@ -1,20 +1,9 @@
-#!/usr/bin/env python3
 # *************************************************************************
 #
 # Copyright (c) 2022 Andrei Gramakov. All rights reserved.
 #
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+# This file is licensed under the terms of the MIT license.
+# For a copy, see: https://opensource.org/licenses/MIT
 #
 # site:    https://agramakov.me
 # e-mail:  mail@agramakov.me
@@ -25,11 +14,12 @@ from collections import deque
 from typing import Dict
 import can
 
-from brain_pycore.thread import StoppableThread
+from ..thread import StoppableThread
 
 
 class CanBus:
     def __init__(self):
+        self._started = False
         self._dev_can = can.interface.Bus(channel='can0', bustype='socketcan_native')
         self._thread = None  # type: StoppableThread | None
         self._device_log = {}  # type: Dict[int,datetime]
@@ -46,25 +36,43 @@ class CanBus:
                 if id:
                     self._device_log[id] = now
                 self._messages.append(msg)
+               
+    @property
+    def is_stopped(self):
+        return not self._started
+               
+    @property
+    def is_started(self):
+        return self._started
 
-    def start(self, max_messages = None):
-        if max_messages:
-            self._messages = deque(maxlen = max_messages)
+    def start(self, max_messages=None):
+        if self.is_stopped:
+            if max_messages:
+                self._messages = deque(maxlen=max_messages)
+            else:
+                self._messages = deque()
+            self._thread = StoppableThread(target=self._canbus_listener)
+            self._thread.start()
+            self._started = True
         else:
-            self._messages = deque()
-        self._thread = StoppableThread(target=self._canbus_listener)
-        self._thread.start()
+            print("Already started")
 
     def stop(self):
-        self._thread.stop()
-        self._thread = None
-        self._messages = None
-        
+        if self.is_started:
+            self._thread.stop()
+            self._thread = None
+            self._started = False
+
     def get(self):
-        return self._messages.pop()
-        
+        if self._messages:
+            return self._messages.pop()
+        else:
+            return None
+
     def send(self):
         # TODO
-        pass
+        if self.is_started:
+            pass
+
 
 canbus = CanBus()
