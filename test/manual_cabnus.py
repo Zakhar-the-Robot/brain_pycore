@@ -13,11 +13,14 @@
 
 from time import sleep
 import brain_pycore
+print(brain_pycore.__file__)
+
 
 def wait(wait_sec=5):
     for i in range(wait_sec):
         sleep(1)
         print(f"Collecting messages: {i+1} sec...")
+
 
 def report():
     msgs = brain_pycore.can.canbus._messages
@@ -25,13 +28,14 @@ def report():
         print(f"Messages: {len(msgs)}")
     else:
         print(f"No messages!")
-        
+
     print("Device log:")
     print(brain_pycore.can.canbus._device_log)
 
+
 if __name__ == "__main__":
     brain_pycore.can.canbus.start(30)
-    
+
     for i in range(3):
         wait()
         brain_pycore.can.canbus.start()
@@ -39,12 +43,6 @@ if __name__ == "__main__":
         msg = brain_pycore.can.canbus.get()
         assert msg is not None
         print(f"The last msg: {msg}")
-        
+
     brain_pycore.can.canbus.stop()
     print("Stopped")
-    msg = brain_pycore.can.canbus.get()
-    assert msg is None
-    print("No message")
-    
-    
-        
