@@ -10,6 +10,11 @@
 #
 # *************************************************************************
 
-from . import topics
-from . import services
-from . import get
+from .version import __version__
+from . import can
+from . import dev
+from . import helpers
+from . import i2c
+from . import logging
+from . import ros
+from . import thread

@@ -1,4 +1,4 @@
-# zakhar_pycore
+# brain_pycore
 
 Base python package for the Zakhar project
 
@@ -16,11 +16,11 @@ pip install zakhar-pycore
 From GitHub:
 
 ``` bash
-pip install git+https://github.com/an-dr/zakhar_pycore
+pip install git+https://github.com/Zakhar-the-Robot/brain_pycore
 ```
 
 From GitHub for a specific branch:
 
 ```bash
-pip install git+https://github.com/an-dr/zakhar_pycore@branch_name
+pip install git+https://github.com/Zakhar-the-Robot/brain_pycore@branch_name
 ```
