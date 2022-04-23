@@ -13,7 +13,6 @@
 
 from time import sleep
 import brain_pycore
-print(brain_pycore.__file__)
 
 
 def wait(wait_sec=5):

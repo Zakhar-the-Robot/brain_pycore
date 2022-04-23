@@ -10,6 +10,7 @@
 #
 # *************************************************************************
 
+from .version import __version__
 from . import can
 from . import dev
 from . import helpers
