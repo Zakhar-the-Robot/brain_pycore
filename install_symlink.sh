@@ -18,4 +18,4 @@ function log { echo "- $1 [$(basename "$0")]" ;}
 
 # *************************************************************************
 
-ln -s "$SCRIPT_ROOT/src/brain_pycore" "/zakhar/python_packages/brain_pycore"
+ln -sf "$SCRIPT_ROOT/src/brain_pycore" "/zakhar/python_packages/brain_pycore"
