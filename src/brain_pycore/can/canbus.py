@@ -20,7 +20,7 @@ from ..thread import StoppableThread
 class CanBus:
     def __init__(self):
         self._started = False
-        self._dev_can = can.interface.Bus(channel='can0', bustype='socketcan_native')
+        self._dev_can = can.interface.Bus(channel='can0', bustype='socketcan')
         self._thread = None  # type: Union[StoppableThread, None]
         self._device_log = {}  # type: Dict[int,datetime]
         self._messages = None  # type: Union[deque, None]
