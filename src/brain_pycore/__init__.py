@@ -11,6 +11,9 @@
 # *************************************************************************
 
 from .version import __version__
+
+from .imports import * # should be before other submodules to import all extra paths
+
 from . import can
 from . import dev
 from . import helpers
