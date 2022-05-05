@@ -11,7 +11,7 @@
 # *************************************************************************
 from datetime import datetime
 from collections import deque
-from typing import Dict, Union
+from typing import Dict, List, Union
 import can
 
 from ..thread import StoppableThread
@@ -77,11 +77,15 @@ class CanBus:
         else:
             return None
 
-    def send(self):
+    def send(self, id: int, data: List[int]):
         """Send a message"""
-        # TODO
         if self.is_started:
-            pass
+            msg = can.Message(
+                arbitration_id=id, 
+                data=data, 
+                is_extended_id=False
+                )
+            self._dev_can.send(msg)
 
 
 canbus = CanBus()
