@@ -1,23 +1,28 @@
 # brain_pycore
 
-Base python package for the Zakhar project
+[![Main - Page](https://img.shields.io/badge/Project-Zakhar%20the%20Robot-yellow)](https://zakhar-the-robot.github.io/doc/ "See the Project Main Page") [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-- Part of the [Zakhar's Brain](https://github.com/an-dr/zakhar_brain)
-- Part of the [Zakhar Project](https://github.com/an-dr/zakhar)
+Base python package for the Zakhar project.
+
+## Content
+
+The package consists of 6 main submodules:
+
+- `dev` - Zakhar device descriptors
+- `helpers` - format functions and other helpers
+- `ros` - ROS convenience methods
+- `zmq` - `ZmqClientThread`, `ZmqPublisherThread`, `ZmqServerThread`, `ZmqSubscriberThread`
+- `logging` - global log (`logging.log`) and formatted local logs (`logging.new_logger`)
+- `thread` - a stoppable extension of threading.Thread
+
 
 ## Installation
-
-From pypi.org:
-
-```bash
-pip install zakhar-pycore
-```
-
-From GitHub:
 
 ``` bash
 pip install git+https://github.com/Zakhar-the-Robot/brain_pycore
 ```
+
+## For Developers
 
 From GitHub for a specific branch:
 
