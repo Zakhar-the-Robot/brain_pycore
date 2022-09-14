@@ -1,89 +1,98 @@
 {
-	"folders": [
-		{
-			"path": "."
-		}
-	],
-	"tasks": {
-		"version": "2.0.0",
-		"tasks": [
-			{
-				"label": "Build",
-				"type": "shell",
-				"command": "python",
-				"args": [
-					"setup.py",
-					"sdist"
-				],
-				"options": {
-					"cwd": "${workspaceFolder}"
-				},
-				"problemMatcher": [],
-			},
-			{
-				"label": "Clean",
-				"type": "shell",
-				"command": "python",
-				"args": [
-					"setup.py",
-					"clean",
-					"--all"
-				],
-				"options": {
-					"cwd": "${workspaceFolder}"
-				},
-				"problemMatcher": []
-			},
-			{
-				"label": "Publish",
-				"type": "shell",
-				"command": "twine",
-				"args": [
-					"upload",
-					"dist/*"
-				],
-				"options": {
-					"cwd": "${workspaceFolder}"
-				},
-				"problemMatcher": [],
-				"presentation": {
-					"echo": true,
-					"reveal": "always",
-					"focus": true,
-					"panel": "shared",
-					"showReuseMessage": true,
-					"clear": false
-				}
-			},
-			{
-				"label": "Clean > Build > Publish",
-				"type": "shell",
-				"command": "twine",
-				"args": [
-					"upload",
-					"dist/*"
-				],
-				"options": {
-					"cwd": "${workspaceFolder}"
-				},
-				"dependsOn": [
-					"Clean",
-					"Build"
-				],
-				"dependsOrder": "sequence",
-				"problemMatcher": [],
-				"presentation": {
-					"echo": true,
-					"reveal": "always",
-					"focus": true,
-					"panel": "shared",
-					"showReuseMessage": true,
-					"clear": false
-				}
-			},
-		]
-	},
-	"settings": {
+    "folders": [
+        {
+            "path": "."
+        },
+        {
+            "path": "/",
+            "name": "/"
+        }
+    ],
+    "tasks": {
+        "version": "2.0.0",
+        "tasks": [
+            {
+                "label": "Build",
+                "type": "shell",
+                "command": "python",
+                "args": [
+                    "setup.py",
+                    "sdist"
+                ],
+                "options": {
+                    "cwd": "${workspaceFolder}"
+                },
+                "problemMatcher": [],
+            },
+            {
+                "label": "Clean",
+                "type": "shell",
+                "command": "python",
+                "args": [
+                    "setup.py",
+                    "clean",
+                    "--all"
+                ],
+                "options": {
+                    "cwd": "${workspaceFolder}"
+                },
+                "problemMatcher": []
+            },
+            {
+                "label": "Publish",
+                "type": "shell",
+                "command": "twine",
+                "args": [
+                    "upload",
+                    "dist/*"
+                ],
+                "options": {
+                    "cwd": "${workspaceFolder}"
+                },
+                "problemMatcher": [],
+                "presentation": {
+                    "echo": true,
+                    "reveal": "always",
+                    "focus": true,
+                    "panel": "shared",
+                    "showReuseMessage": true,
+                    "clear": false
+                }
+            },
+            {
+                "label": "Clean > Build > Publish",
+                "type": "shell",
+                "command": "twine",
+                "args": [
+                    "upload",
+                    "dist/*"
+                ],
+                "options": {
+                    "cwd": "${workspaceFolder}"
+                },
+                "dependsOn": [
+                    "Clean",
+                    "Build"
+                ],
+                "dependsOrder": "sequence",
+                "problemMatcher": [],
+                "presentation": {
+                    "echo": true,
+                    "reveal": "always",
+                    "focus": true,
+                    "panel": "shared",
+                    "showReuseMessage": true,
+                    "clear": false
+                }
+            },
+        ]
+    },
+    "settings": {
+        "python.linting.enabled": true,
+        "python.linting.flake8Enabled": true,
+        "python.linting.flake8Args": ["--config=.flake8"],
+        "python.formatting.provider": "autopep8",
+        "python.formatting.autopep8Args": [ "--global-config=.flake8"],
         "python.analysis.extraPaths": [
             "${workspaceFolder}/src",
             "/zakhar/python_packages/brain_pycore/src",

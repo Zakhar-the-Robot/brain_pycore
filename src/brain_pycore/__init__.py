@@ -10,14 +10,13 @@
 #
 # *************************************************************************
 
-from .version import __version__
+__version__ = "2.0.0"
 
-from .imports import * # should be before other submodules to import all extra paths
+from .imports import *  # should be before other submodules to import all extra paths
 
 from . import can
 from . import dev
 from . import helpers
-from . import i2c
 from . import logging
-from . import ros
 from . import thread
+from . import zmq

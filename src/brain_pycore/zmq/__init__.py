@@ -10,4 +10,7 @@
 #
 # *************************************************************************
 
-__version__ = "1.4.0"
+from .client import ZmqClientThread
+from .publisher import ZmqPublisherThread
+from .server import ZmqServerThread
+from .subscriber import ZmqSubscriberThread

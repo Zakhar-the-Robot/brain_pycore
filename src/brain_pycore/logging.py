@@ -2,13 +2,15 @@
 #
 # Copyright (c) 2022 Andrei Gramakov. All rights reserved.
 #
-# This file is licensed under the terms of the MIT license.  
+# This file is licensed under the terms of the MIT license.
 # For a copy, see: https://opensource.org/licenses/MIT
 #
 # site:    https://agramakov.me
 # e-mail:  mail@agramakov.me
 #
 # *************************************************************************
+
+from enum import IntEnum
 import logging
 import os
 
@@ -17,7 +19,17 @@ CONFIG_DONT_PRINT_TO_FILES = False
 CONFIG_LOG_DIR = "/zakhar/logs"
 
 
-def new_logger(name, log_level=logging.INFO):
+class LOG_LEVEL(IntEnum):
+    CRITICAL = logging.CRITICAL
+    FATAL = logging.CRITICAL
+    ERROR = logging.ERROR
+    WARNING = logging.WARNING
+    INFO = logging.INFO
+    DEBUG = logging.DEBUG
+    NOTSET = logging.NOTSET
+
+
+def new_logger(name, log_level=LOG_LEVEL.INFO):
 
     logger = logging.getLogger(name=name)
     formatter = logging.Formatter(CONFIG_LOG_FORMAT)

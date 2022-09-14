@@ -2,7 +2,7 @@
 #
 # Copyright (c) 2022 Andrei Gramakov. All rights reserved.
 #
-# This file is licensed under the terms of the MIT license.  
+# This file is licensed under the terms of the MIT license.
 # For a copy, see: https://opensource.org/licenses/MIT
 #
 # site:    https://agramakov.me
@@ -13,7 +13,9 @@ import threading
 
 
 class StoppableThread(threading.Thread):
-    def __init__(self, group=None, target=None, name=None, args=(), kwargs=None, daemon=True):
+    def __init__(self, group=None, target=None, name=None,
+                 args=(), kwargs=None,
+                 daemon=True):
         self._request_stop = False
         super(StoppableThread, self).__init__(group=group,
                                               target=target,
@@ -28,6 +30,10 @@ class StoppableThread(threading.Thread):
                 self._target(*self._args, **self._kwargs)
             else:
                 return
+
+    @property
+    def is_stopping(self):
+        return self._request_stop
 
     def stop(self):
         self._request_stop = True
