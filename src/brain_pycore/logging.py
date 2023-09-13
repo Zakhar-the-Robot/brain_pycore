@@ -16,7 +16,7 @@ import os
 
 CONFIG_LOG_FORMAT = "%(relativeCreated)8d [%(levelname).1s] %(name)-s:  %(message)s"
 CONFIG_DONT_PRINT_TO_FILES = False
-CONFIG_LOG_DIR = "/zakhar/logs"
+CONFIG_LOG_DIR = "zakhar/logs"
 
 
 class LOG_LEVEL(IntEnum):

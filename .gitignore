@@ -67,6 +67,7 @@ venv.bak/
 
 #IDEs
 .vscode
+.idea
 
 # Rope project settings
 .ropeproject
